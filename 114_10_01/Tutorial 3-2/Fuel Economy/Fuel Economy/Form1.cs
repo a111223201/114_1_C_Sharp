@@ -19,12 +19,26 @@ namespace Fuel_Economy
 
         private void calculateButton_Click(object sender, EventArgs e)
         {
-            
+            // 假設有兩個TextBox: milesTextBox, gallonsTextBox
+            // 一個Label: resultLabel
+            double miles, gallons, mpg;
+
+            if (double.TryParse(milesTextBox.Text, out miles) &&
+                double.TryParse(gallonsTextBox.Text, out gallons) &&
+                gallons > 0)
+            {
+                mpg = miles / gallons;
+                mpgLabel.Text = $"每加侖英里數: {mpg:F2}";
+            }
+            else
+            {
+                MessageBox.Show("請輸入有效的數值。", "輸入錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void exitButton_Click(object sender, EventArgs e)
         {
-            // Close the form.
+            // 關閉表單
             this.Close();
         }
     }
