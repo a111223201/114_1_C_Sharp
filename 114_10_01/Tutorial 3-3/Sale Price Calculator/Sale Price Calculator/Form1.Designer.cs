@@ -59,7 +59,7 @@
             this.originalPricePromptLabel.Name = "originalPricePromptLabel";
             this.originalPricePromptLabel.Size = new System.Drawing.Size(144, 13);
             this.originalPricePromptLabel.TabIndex = 2;
-            this.originalPricePromptLabel.Text = "請輸入商品原價：";
+            this.originalPricePromptLabel.Text = "Enter the item\'s original price:";
             // 
             // discPercentagePromptLabel
             // 
@@ -68,7 +68,7 @@
             this.discPercentagePromptLabel.Name = "discPercentagePromptLabel";
             this.discPercentagePromptLabel.Size = new System.Drawing.Size(153, 13);
             this.discPercentagePromptLabel.TabIndex = 3;
-            this.discPercentagePromptLabel.Text = "請輸入折扣百分比：";
+            this.discPercentagePromptLabel.Text = "Enter the discount percentage:";
             // 
             // outputDescriptionLabel
             // 
@@ -77,7 +77,7 @@
             this.outputDescriptionLabel.Name = "outputDescriptionLabel";
             this.outputDescriptionLabel.Size = new System.Drawing.Size(57, 13);
             this.outputDescriptionLabel.TabIndex = 4;
-            this.outputDescriptionLabel.Text = "特價：";
+            this.outputDescriptionLabel.Text = "Sale price:";
             // 
             // salePriceLabel
             // 
@@ -94,7 +94,7 @@
             this.calculateButton.Name = "calculateButton";
             this.calculateButton.Size = new System.Drawing.Size(75, 39);
             this.calculateButton.TabIndex = 6;
-            this.calculateButton.Text = "計算特價";
+            this.calculateButton.Text = "Calculate Sale Price";
             this.calculateButton.UseVisualStyleBackColor = true;
             this.calculateButton.Click += new System.EventHandler(this.calculateButton_Click);
             // 
@@ -104,7 +104,7 @@
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(75, 39);
             this.exitButton.TabIndex = 7;
-            this.exitButton.Text = "離開";
+            this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
@@ -122,7 +122,7 @@
             this.Controls.Add(this.discountPercentageTextBox);
             this.Controls.Add(this.originalPriceTextBox);
             this.Name = "Form1";
-            this.Text = "特價計算機";
+            this.Text = "Sale Price Calculator";
             this.ResumeLayout(false);
             this.PerformLayout();
 
