@@ -1,0 +1,42 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Test_Average
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        // 計算平均按鈕事件
+        private void calculateButton_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        // 清除按鈕事件
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            test1TextBox.Clear();
+            test2TextBox.Clear();
+            test3TextBox.Clear();
+            averageLabel.Text = string.Empty;
+            test1TextBox.Focus();
+        }
+
+        // 離開按鈕事件
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
+}
