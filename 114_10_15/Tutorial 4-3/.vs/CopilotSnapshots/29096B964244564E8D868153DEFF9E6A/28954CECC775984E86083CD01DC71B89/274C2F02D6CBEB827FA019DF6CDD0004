@@ -1,0 +1,46 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Loan_Qualifier
+{
+    public partial class Form1 : Form
+    {
+        // 建構子：初始化表單元件
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        // 當使用者點擊「資格審查」按鈕時觸發
+        private void checkButton_Click(object sender, EventArgs e)
+        {
+            // 這裡可以加入資格審查的邏輯
+        }
+
+        // 當使用者點擊「清除」按鈕時觸發
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            // 清空年薪與年資輸入框，以及結果標籤
+            salaryTextBox.Text = "";
+            yearsTextBox.Text = "";
+            decisionLabel.Text = "";
+
+            // 將游標焦點回到年薪輸入框
+            salaryTextBox.Focus();
+        }
+
+        // 當使用者點擊「離開」按鈕時觸發
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            // 關閉表單
+            this.Close();
+        }
+    }
+}
