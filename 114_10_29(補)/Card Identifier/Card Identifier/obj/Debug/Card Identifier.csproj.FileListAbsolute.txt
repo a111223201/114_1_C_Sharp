@@ -1,0 +1,10 @@
+C:\Users\user\Desktop\Card Identifier\Card Identifier\bin\Debug\Card Identifier.exe.config
+C:\Users\user\Desktop\Card Identifier\Card Identifier\bin\Debug\Card Identifier.exe
+C:\Users\user\Desktop\Card Identifier\Card Identifier\bin\Debug\Card Identifier.pdb
+C:\Users\user\Desktop\Card Identifier\Card Identifier\obj\Debug\Card Identifier.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\Card Identifier\Card Identifier\obj\Debug\Card_Identifier.Form1.resources
+C:\Users\user\Desktop\Card Identifier\Card Identifier\obj\Debug\Card_Identifier.Properties.Resources.resources
+C:\Users\user\Desktop\Card Identifier\Card Identifier\obj\Debug\Card Identifier.csproj.GenerateResource.cache
+C:\Users\user\Desktop\Card Identifier\Card Identifier\obj\Debug\Card Identifier.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Card Identifier\Card Identifier\obj\Debug\Card Identifier.exe
+C:\Users\user\Desktop\Card Identifier\Card Identifier\obj\Debug\Card Identifier.pdb
