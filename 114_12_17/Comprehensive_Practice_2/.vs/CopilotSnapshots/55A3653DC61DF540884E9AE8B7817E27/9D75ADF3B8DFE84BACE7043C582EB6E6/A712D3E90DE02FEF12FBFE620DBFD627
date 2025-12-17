@@ -1,0 +1,151 @@
+﻿namespace Comprehensive_Practice_1
+{
+    partial class Form1
+    {
+        /// <summary>
+        /// 設計工具所需的變數。
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// 清除任何使用中的資源。
+        /// </summary>
+        /// <param name="disposing">如果應該處置受控資源則為 true，否則為 false。</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form 設計工具產生的程式碼
+
+        /// <summary>
+        /// 此為設計工具支援所需的方法 - 請勿使用程式碼編輯器修改
+        /// 這個方法的內容。
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            
+            // 建立標籤
+            System.Windows.Forms.Label lblLastName = new System.Windows.Forms.Label();
+            System.Windows.Forms.Label lblFirstName = new System.Windows.Forms.Label();
+            System.Windows.Forms.Label lblScore1 = new System.Windows.Forms.Label();
+            System.Windows.Forms.Label lblScore2 = new System.Windows.Forms.Label();
+            System.Windows.Forms.Label lblScore3 = new System.Windows.Forms.Label();
+            System.Windows.Forms.Label lblResult = new System.Windows.Forms.Label();
+            
+            // 建立文字方塊
+            System.Windows.Forms.TextBox txtLastName = new System.Windows.Forms.TextBox();
+            System.Windows.Forms.TextBox txtFirstName = new System.Windows.Forms.TextBox();
+            System.Windows.Forms.TextBox txtScore1 = new System.Windows.Forms.TextBox();
+            System.Windows.Forms.TextBox txtScore2 = new System.Windows.Forms.TextBox();
+            System.Windows.Forms.TextBox txtScore3 = new System.Windows.Forms.TextBox();
+            
+            // 建立按鈕
+            System.Windows.Forms.Button btnShowMax = new System.Windows.Forms.Button();
+            System.Windows.Forms.Button btnExit = new System.Windows.Forms.Button();
+            
+            // lblLastName
+            lblLastName.AutoSize = true;
+            lblLastName.Font = new System.Drawing.Font("Microsoft JhengHei", 22F);
+            lblLastName.Location = new System.Drawing.Point(30, 30);
+            lblLastName.Text = "姓";
+            
+            // lblFirstName
+            lblFirstName.AutoSize = true;
+            lblFirstName.Font = new System.Drawing.Font("Microsoft JhengHei", 22F);
+            lblFirstName.Location = new System.Drawing.Point(30, 80);
+            lblFirstName.Text = "名";
+            
+            // lblScore1
+            lblScore1.AutoSize = true;
+            lblScore1.Font = new System.Drawing.Font("Microsoft JhengHei", 22F);
+            lblScore1.Location = new System.Drawing.Point(30, 130);
+            lblScore1.Text = "小考1";
+            
+            // lblScore2
+            lblScore2.AutoSize = true;
+            lblScore2.Font = new System.Drawing.Font("Microsoft JhengHei", 22F);
+            lblScore2.Location = new System.Drawing.Point(30, 180);
+            lblScore2.Text = "小考2";
+            
+            // lblScore3
+            lblScore3.AutoSize = true;
+            lblScore3.Font = new System.Drawing.Font("Microsoft JhengHei", 22F);
+            lblScore3.Location = new System.Drawing.Point(30, 230);
+            lblScore3.Text = "小考3";
+            
+            // txtLastName
+            txtLastName.Font = new System.Drawing.Font("Microsoft JhengHei", 22F);
+            txtLastName.Location = new System.Drawing.Point(140, 30);
+            txtLastName.Size = new System.Drawing.Size(150, 50);
+            
+            // txtFirstName
+            txtFirstName.Font = new System.Drawing.Font("Microsoft JhengHei", 22F);
+            txtFirstName.Location = new System.Drawing.Point(140, 80);
+            txtFirstName.Size = new System.Drawing.Size(150, 50);
+            
+            // txtScore1
+            txtScore1.Font = new System.Drawing.Font("Microsoft JhengHei", 22F);
+            txtScore1.Location = new System.Drawing.Point(140, 130);
+            txtScore1.Size = new System.Drawing.Size(150, 50);
+            
+            // txtScore2
+            txtScore2.Font = new System.Drawing.Font("Microsoft JhengHei", 22F);
+            txtScore2.Location = new System.Drawing.Point(140, 180);
+            txtScore2.Size = new System.Drawing.Size(150, 50);
+            
+            // txtScore3
+            txtScore3.Font = new System.Drawing.Font("Microsoft JhengHei", 22F);
+            txtScore3.Location = new System.Drawing.Point(140, 230);
+            txtScore3.Size = new System.Drawing.Size(150, 50);
+            
+            // btnShowMax
+            btnShowMax.Font = new System.Drawing.Font("Microsoft JhengHei", 22F);
+            btnShowMax.Location = new System.Drawing.Point(30, 290);
+            btnShowMax.Size = new System.Drawing.Size(150, 50);
+            btnShowMax.Text = "顯示最高分";
+            btnShowMax.UseVisualStyleBackColor = true;
+            
+            // btnExit
+            btnExit.Font = new System.Drawing.Font("Microsoft JhengHei", 22F);
+            btnExit.Location = new System.Drawing.Point(200, 290);
+            btnExit.Size = new System.Drawing.Size(90, 50);
+            btnExit.Text = "離開";
+            btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            
+            // lblResult
+            lblResult.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            lblResult.Font = new System.Drawing.Font("Microsoft JhengHei", 22F);
+            lblResult.Location = new System.Drawing.Point(340, 30);
+            lblResult.Size = new System.Drawing.Size(400, 310);
+            lblResult.Text = "";
+            
+            // Form1
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(lblLastName);
+            this.Controls.Add(lblFirstName);
+            this.Controls.Add(lblScore1);
+            this.Controls.Add(lblScore2);
+            this.Controls.Add(lblScore3);
+            this.Controls.Add(txtLastName);
+            this.Controls.Add(txtFirstName);
+            this.Controls.Add(txtScore1);
+            this.Controls.Add(txtScore2);
+            this.Controls.Add(txtScore3);
+            this.Controls.Add(btnShowMax);
+            this.Controls.Add(btnExit);
+            this.Controls.Add(lblResult);
+            this.Text = "Form1";
+        }
+
+        #endregion
+    }
+}
+
