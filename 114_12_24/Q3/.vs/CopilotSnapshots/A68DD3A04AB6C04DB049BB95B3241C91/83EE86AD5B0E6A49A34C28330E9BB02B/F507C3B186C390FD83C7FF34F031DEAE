@@ -1,0 +1,223 @@
+﻿namespace Q3
+{
+    partial class Form1
+    {
+        /// <summary>
+        /// 設計工具所需的變數。
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        // controls
+        private System.Windows.Forms.Label lblNum1;
+        private System.Windows.Forms.Label lblNum2;
+        private System.Windows.Forms.Label lblNum3;
+        private System.Windows.Forms.Label lblNum4;
+        private System.Windows.Forms.Label lblNum5;
+        private System.Windows.Forms.Button btnGenerate;
+        private System.Windows.Forms.Button btnDraw;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.TextBox txtOutput; // multiline result box
+        private System.Windows.Forms.ListBox lstDrawn; // unused but keep
+
+        // right side comparison labels
+        private System.Windows.Forms.Label lblCompareTitle;
+        private System.Windows.Forms.Label lblMatchCount;
+        private System.Windows.Forms.Label lblPrizeIcon;
+        private System.Windows.Forms.Label lblPrizeText;
+
+        /// <summary>
+        /// 清除任何使用中的資源。
+        /// </summary>
+        /// <param name="disposing">如果應該處置受控資源則為 true，否則為 false。</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form 設計工具產生的程式碼
+
+        /// <summary>
+        /// 此為設計工具支援所需的方法 - 請勿使用程式碼編輯器修改
+        /// 這個方法的內容。
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "樂透號碼產生器";
+            this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+
+            this.SuspendLayout();
+
+            // create controls
+            this.lblNum1 = new System.Windows.Forms.Label();
+            this.lblNum2 = new System.Windows.Forms.Label();
+            this.lblNum3 = new System.Windows.Forms.Label();
+            this.lblNum4 = new System.Windows.Forms.Label();
+            this.lblNum5 = new System.Windows.Forms.Label();
+
+            this.btnGenerate = new System.Windows.Forms.Button();
+            this.btnDraw = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+
+            this.txtOutput = new System.Windows.Forms.TextBox();
+            this.lstDrawn = new System.Windows.Forms.ListBox();
+
+            this.lblCompareTitle = new System.Windows.Forms.Label();
+            this.lblMatchCount = new System.Windows.Forms.Label();
+            this.lblPrizeIcon = new System.Windows.Forms.Label();
+            this.lblPrizeText = new System.Windows.Forms.Label();
+
+            // common font 18pt
+            var font18 = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            var font18Bold = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
+            // top number labels (use explicit literal coordinates for designer)
+            // positions: x = 120,200,280,360,440; y = 12
+
+            this.lblNum1.Location = new System.Drawing.Point(120, 12);
+            this.lblNum1.Size = new System.Drawing.Size(60, 40);
+            this.lblNum1.Name = "lblNum1";
+            this.lblNum1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblNum1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNum1.Font = font18;
+            this.lblNum1.Text = string.Empty;
+
+            this.lblNum2.Location = new System.Drawing.Point(200, 12);
+            this.lblNum2.Size = new System.Drawing.Size(60, 40);
+            this.lblNum2.Name = "lblNum2";
+            this.lblNum2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblNum2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNum2.Font = font18;
+            this.lblNum2.Text = string.Empty;
+
+            this.lblNum3.Location = new System.Drawing.Point(280, 12);
+            this.lblNum3.Size = new System.Drawing.Size(60, 40);
+            this.lblNum3.Name = "lblNum3";
+            this.lblNum3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblNum3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNum3.Font = font18;
+            this.lblNum3.Text = string.Empty;
+
+            this.lblNum4.Location = new System.Drawing.Point(360, 12);
+            this.lblNum4.Size = new System.Drawing.Size(60, 40);
+            this.lblNum4.Name = "lblNum4";
+            this.lblNum4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblNum4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNum4.Font = font18;
+            this.lblNum4.Text = string.Empty;
+
+            this.lblNum5.Location = new System.Drawing.Point(440, 12);
+            this.lblNum5.Size = new System.Drawing.Size(60, 40);
+            this.lblNum5.Name = "lblNum5";
+            this.lblNum5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblNum5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNum5.Font = font18;
+            this.lblNum5.Text = string.Empty;
+
+            // buttons under numbers
+            int btnY = 62;
+            this.btnGenerate.Location = new System.Drawing.Point(120, btnY);
+            this.btnGenerate.Size = new System.Drawing.Size(140, 44);
+            this.btnGenerate.Name = "btnGenerate";
+            this.btnGenerate.Text = "產生號碼";
+            this.btnGenerate.UseVisualStyleBackColor = true;
+            this.btnGenerate.Font = font18;
+            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
+
+            this.btnDraw.Location = new System.Drawing.Point(280, btnY);
+            this.btnDraw.Size = new System.Drawing.Size(140, 44);
+            this.btnDraw.Name = "btnDraw";
+            this.btnDraw.Text = "開獎號碼";
+            this.btnDraw.UseVisualStyleBackColor = true;
+            this.btnDraw.Font = font18;
+            this.btnDraw.Click += new System.EventHandler(this.btnDraw_Click);
+
+            this.btnExit.Location = new System.Drawing.Point(440, btnY);
+            this.btnExit.Size = new System.Drawing.Size(120, 44);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Text = "離開";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Font = font18;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+
+            // left multiline output textbox (shows drawn report)
+            this.txtOutput.Location = new System.Drawing.Point(30, 126);
+            this.txtOutput.Size = new System.Drawing.Size(480, 250);
+            this.txtOutput.Multiline = true;
+            this.txtOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtOutput.Name = "txtOutput";
+            this.txtOutput.ReadOnly = true;
+            this.txtOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+
+            // keep lstDrawn but hidden (not used)
+            this.lstDrawn.Location = new System.Drawing.Point(530, 190);
+            this.lstDrawn.Size = new System.Drawing.Size(240, 250);
+            this.lstDrawn.Name = "lstDrawn";
+            this.lstDrawn.Font = font18;
+            this.lstDrawn.Visible = false;
+
+            // right side comparison labels
+            int rightX = 540;
+            int rightY = 102;
+            this.lblCompareTitle.Location = new System.Drawing.Point(rightX, rightY);
+            this.lblCompareTitle.Size = new System.Drawing.Size(200, 30);
+            this.lblCompareTitle.Name = "lblCompareTitle";
+            this.lblCompareTitle.Font = font18Bold;
+            this.lblCompareTitle.ForeColor = System.Drawing.Color.Red;
+            this.lblCompareTitle.Text = "比對結果：";
+
+            this.lblMatchCount.Location = new System.Drawing.Point(rightX, rightY + 40);
+            this.lblMatchCount.Size = new System.Drawing.Size(220, 40);
+            this.lblMatchCount.Name = "lblMatchCount";
+            this.lblMatchCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
+            this.lblMatchCount.ForeColor = System.Drawing.Color.Red;
+            this.lblMatchCount.Text = "中0個號碼";
+
+            this.lblPrizeIcon.Location = new System.Drawing.Point(rightX, rightY + 100);
+            this.lblPrizeIcon.Size = new System.Drawing.Size(60, 60);
+            this.lblPrizeIcon.Name = "lblPrizeIcon";
+            this.lblPrizeIcon.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F);
+            this.lblPrizeIcon.ForeColor = System.Drawing.Color.Red;
+            this.lblPrizeIcon.Text = "😵";
+
+            this.lblPrizeText.Location = new System.Drawing.Point(rightX + 70, rightY + 110);
+            this.lblPrizeText.Size = new System.Drawing.Size(160, 40);
+            this.lblPrizeText.Name = "lblPrizeText";
+            this.lblPrizeText.Font = font18Bold;
+            this.lblPrizeText.ForeColor = System.Drawing.Color.Red;
+            this.lblPrizeText.Text = "沒中獎";
+
+            // add controls to form
+            this.Controls.Add(this.lblNum1);
+            this.Controls.Add(this.lblNum2);
+            this.Controls.Add(this.lblNum3);
+            this.Controls.Add(this.lblNum4);
+            this.Controls.Add(this.lblNum5);
+
+            this.Controls.Add(this.btnGenerate);
+            this.Controls.Add(this.btnDraw);
+            this.Controls.Add(this.btnExit);
+
+            this.Controls.Add(this.txtOutput);
+            this.Controls.Add(this.lstDrawn);
+
+            this.Controls.Add(this.lblCompareTitle);
+            this.Controls.Add(this.lblMatchCount);
+            this.Controls.Add(this.lblPrizeIcon);
+            this.Controls.Add(this.lblPrizeText);
+
+            this.ResumeLayout(false);
+            this.PerformLayout();
+        }
+
+        #endregion
+    }
+}
+

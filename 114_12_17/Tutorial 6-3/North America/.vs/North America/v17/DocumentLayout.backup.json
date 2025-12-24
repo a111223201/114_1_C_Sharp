@@ -25,19 +25,6 @@
           "SelectedChildIndex": 3,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\m303\\Desktop\\114_1_C_Sharp\\114_12_17\\Tutorial 6-3\\North America\\North America\\Form1.Designer.cs",
-              "RelativeDocumentMoniker": "North America\\Form1.Designer.cs",
-              "ToolTip": "C:\\Users\\m303\\Desktop\\114_1_C_Sharp\\114_12_17\\Tutorial 6-3\\North America\\North America\\Form1.Designer.cs*",
-              "RelativeToolTip": "North America\\Form1.Designer.cs*",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T02:52:15.744Z",
-              "EditorCaption": ""
-            },
-            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
             },
@@ -47,13 +34,26 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\m303\\Desktop\\114_1_C_Sharp\\114_12_17\\Tutorial 6-3\\North America\\North America\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "North America\\Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\m303\\Desktop\\114_1_C_Sharp\\114_12_17\\Tutorial 6-3\\North America\\North America\\Form1.Designer.cs",
+              "RelativeToolTip": "North America\\Form1.Designer.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-17T02:52:15.744Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\m303\\Desktop\\114_1_C_Sharp\\114_12_17\\Tutorial 6-3\\North America\\North America\\Form1.cs",
               "RelativeDocumentMoniker": "North America\\Form1.cs",
-              "ToolTip": "C:\\Users\\m303\\Desktop\\114_1_C_Sharp\\114_12_17\\Tutorial 6-3\\North America\\North America\\Form1.cs*",
-              "RelativeToolTip": "North America\\Form1.cs*",
-              "ViewState": "AgIAABsAAAAAAAAAAAAswFQAAAAJAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\m303\\Desktop\\114_1_C_Sharp\\114_12_17\\Tutorial 6-3\\North America\\North America\\Form1.cs",
+              "RelativeToolTip": "North America\\Form1.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAowFQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-17T02:51:35.601Z",
               "EditorCaption": ""
@@ -64,8 +64,8 @@
               "Title": "Form1.cs [\u8A2D\u8A08]",
               "DocumentMoniker": "C:\\Users\\m303\\Desktop\\114_1_C_Sharp\\114_12_17\\Tutorial 6-3\\North America\\North America\\Form1.cs",
               "RelativeDocumentMoniker": "North America\\Form1.cs",
-              "ToolTip": "C:\\Users\\m303\\Desktop\\114_1_C_Sharp\\114_12_17\\Tutorial 6-3\\North America\\North America\\Form1.cs [\u8A2D\u8A08]*",
-              "RelativeToolTip": "North America\\Form1.cs [\u8A2D\u8A08]*",
+              "ToolTip": "C:\\Users\\m303\\Desktop\\114_1_C_Sharp\\114_12_17\\Tutorial 6-3\\North America\\North America\\Form1.cs [\u8A2D\u8A08]",
+              "RelativeToolTip": "North America\\Form1.cs [\u8A2D\u8A08]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-17T02:51:35.667Z",
               "EditorCaption": " [\u8A2D\u8A08]"

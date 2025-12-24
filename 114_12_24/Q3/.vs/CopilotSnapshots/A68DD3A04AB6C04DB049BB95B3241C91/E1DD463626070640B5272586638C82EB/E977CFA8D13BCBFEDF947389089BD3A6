@@ -1,0 +1,267 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Q3
+{
+    public partial class Form1 : Form
+    {
+        private Random _rnd = new Random();
+        private List<int> _lastNumbers = new List<int>();
+
+        public Form1()
+        {
+            InitializeComponent();
+
+            // initial state: Draw disabled until numbers are generated
+            btnDraw.Enabled = false;
+
+            // initialize output area default
+            if (txtOutput != null)
+            {
+                txtOutput.Text = "比對結果：\r\n中0個號碼\r\n沒中獎";
+            }
+        }
+
+        private void btnGenerate_Click(object sender, EventArgs e)
+        {
+            // generate 5 unique random numbers between 1 and 49 using basic loops and arrays
+            var nums = new int[5];
+            int count = 0;
+            while (count < 5)
+            {
+                int candidate = _rnd.Next(1, 50);
+                bool exists = false;
+                for (int i = 0; i < count; i++)
+                {
+                    if (nums[i] == candidate)
+                    {
+                        exists = true;
+                        break;
+                    }
+                }
+                if (!exists)
+                {
+                    nums[count] = candidate;
+                    count++;
+                }
+            }
+
+            // sort using simple bubble sort to avoid advanced methods
+            for (int i = 0; i < nums.Length - 1; i++)
+            {
+                for (int j = 0; j < nums.Length - 1 - i; j++)
+                {
+                    if (nums[j] > nums[j + 1])
+                    {
+                        int tmp = nums[j];
+                        nums[j] = nums[j + 1];
+                        nums[j + 1] = tmp;
+                    }
+                }
+            }
+
+            // store in list for later comparison
+            _lastNumbers.Clear();
+            for (int i = 0; i < nums.Length; i++) _lastNumbers.Add(nums[i]);
+
+            // display in top labels
+            lblNum1.Text = nums[0].ToString();
+            lblNum2.Text = nums[1].ToString();
+            lblNum3.Text = nums[2].ToString();
+            lblNum4.Text = nums[3].ToString();
+            lblNum5.Text = nums[4].ToString();
+
+            // enable Draw button now that user numbers exist
+            btnDraw.Enabled = true;
+
+            // clear previous results
+            if (txtOutput != null) txtOutput.Text = string.Empty;
+            if (lstDrawn != null) lstDrawn.Items.Clear();
+
+            // reset comparison text
+            if (txtOutput != null)
+            {
+                txtOutput.Text = "比對結果：\r\n中0個號碼\r\n沒中獎";
+            }
+        }
+
+        private void btnDraw_Click(object sender, EventArgs e)
+        {
+            // Ensure user has generated numbers
+            if (_lastNumbers == null || _lastNumbers.Count != 5)
+            {
+                MessageBox.Show("請先按下 產生號碼 以取得號碼。", "尚未產生", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // Disable Generate and Draw buttons immediately to prevent changes while drawing
+            btnGenerate.Enabled = false;
+            btnDraw.Enabled = false;
+
+            using (var ofd = new OpenFileDialog())
+            {
+                ofd.Filter = "文字檔 (*.txt)|*.txt|所有檔案 (*.*)|*.*";
+                ofd.Title = "選擇開獎號碼檔案（每行一個數字，共五行）";
+
+                DialogResult dr = ofd.ShowDialog();
+
+                if (dr != DialogResult.OK)
+                {
+                    // user cancelled - re-enable buttons and exit
+                    btnGenerate.Enabled = true;
+                    btnDraw.Enabled = true;
+                    return;
+                }
+
+                string path = ofd.FileName;
+
+                try
+                {
+                    using (var sr = new StreamReader(path))
+                    {
+                        int[] drawn = new int[5];
+                        string line;
+                        int idx = 0;
+
+                        while (idx < 5 && (line = sr.ReadLine()) != null)
+                        {
+                            if (string.IsNullOrWhiteSpace(line))
+                            {
+                                throw new FormatException($"第 {idx + 1} 行為空白。每一行應為 1-49 的數字。");
+                            }
+
+                            string s = line.Trim();
+                            int value;
+                            if (!int.TryParse(s, out value))
+                            {
+                                throw new FormatException($"第 {idx + 1} 行格式錯誤：'{s}' 不是有效整數。");
+                            }
+
+                            if (value < 1 || value > 49)
+                            {
+                                throw new ArgumentOutOfRangeException($"第 {idx + 1} 行數字 {value} 超出範圍 (1-49)。");
+                            }
+
+                            // store
+                            drawn[idx] = value;
+                            idx++;
+                        }
+
+                        if (idx < 5)
+                        {
+                            throw new FormatException("檔案內容不足：需要 5 行數字。請確認檔案格式。");
+                        }
+
+                        // build output report into txtOutput
+                        var sbOut = new StringBuilder();
+                        sbOut.AppendLine("本期開獎號碼：");
+                        for (int i = 0; i < drawn.Length; i++)
+                        {
+                            sbOut.AppendLine($"第{ i + 1 }個號碼：{ drawn[i] }");
+                        }
+
+                        // compare using simple loops
+                        int matchCount = 0;
+                        for (int i = 0; i < _lastNumbers.Count; i++)
+                        {
+                            for (int j = 0; j < drawn.Length; j++)
+                            {
+                                if (_lastNumbers[i] == drawn[j])
+                                {
+                                    matchCount++;
+                                    break; // avoid double counting same user number
+                                }
+                            }
+                        }
+
+                        string prize;
+                        string icon;
+                        switch (matchCount)
+                        {
+                            case 5:
+                                prize = "頭獎";
+                                icon = "🏆";
+                                break;
+                            case 4:
+                                prize = "貳獎";
+                                icon = "🎉";
+                                break;
+                            case 3:
+                                prize = "參獎";
+                                icon = "🙂";
+                                break;
+                            case 2:
+                                prize = "肆獎";
+                                icon = "😐";
+                                break;
+                            case 1:
+                                prize = "普獎";
+                                icon = "😕";
+                                break;
+                            default:
+                                prize = "沒中獎";
+                                icon = "😵";
+                                break;
+                        }
+
+                        if (txtOutput != null)
+                        {
+                            sbOut.AppendLine();
+                            sbOut.AppendLine("比對結果：");
+                            sbOut.AppendLine($"中{matchCount}個號碼");
+                            sbOut.AppendLine($"獎項：{prize} {icon}");
+
+                            txtOutput.Text = sbOut.ToString();
+                        }
+
+                        // display drawn numbers in hidden ListBox as backup
+                        if (lstDrawn != null)
+                        {
+                            lstDrawn.Items.Clear();
+                            for (int i = 0; i < 5; i++) lstDrawn.Items.Add(drawn[i].ToString());
+                        }
+                    }
+                }
+                catch (FileNotFoundException)
+                {
+                    MessageBox.Show("找不到檔案，請確認路徑是否正確。", "檔案錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (UnauthorizedAccessException)
+                {
+                    MessageBox.Show("無法存取該檔案，可能權限不足。", "存取錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (FormatException ex)
+                {
+                    MessageBox.Show("檔案格式錯誤：\n" + ex.Message, "格式錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (ArgumentOutOfRangeException ex)
+                {
+                    MessageBox.Show("數字範圍錯誤：\n" + ex.Message, "範圍錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("讀取檔案時發生錯誤：\n" + ex.Message, "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    // always re-enable Generate and Draw so user can produce new numbers or re-draw
+                    btnGenerate.Enabled = true;
+                    btnDraw.Enabled = true;
+                }
+            }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
+}
